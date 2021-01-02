@@ -1,0 +1,107 @@
+﻿<html>
+
+<head>
+  <title>Student Page</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div style="text-align: center;">
+    <img src="qouLogoNew.png">
+    <span>
+      <h1> جامعة القدس المفتوحة (QOU)</h1>
+    </span>
+    <div class="box">
+      <div style="margin: 30px;">
+        <div class="textSize" style="float: right;">اسم الطالب : أشجان عبد الرحيم رجا</div>
+        <div class="textSize" style="float: left;"></div>المستوى : 3</div>
+        <div class="textSize">رقم الطالب : 0170011811199</div>
+      </div>
+      <div style="margin: 30px;">
+        <div class="textSize" style="float: right;">عدد الساعات المجتازة: 74</div>
+        <div class="textSize" style="float: left;">خريج : لا</div>
+        <div class="textSize">عدد الساعات المسجلة : 9</div>
+        <div class="textSize"style="float:right;">عدد الساعات المحتسبة :9</div>
+      </div>
+    </div>
+    <table id="myTable">
+      <tr>
+        <th>رقم المقرر</th>
+        <th>اسم المقرر</th>
+        <th>عدد الساعات</th>
+        <th>الحالة</th>
+        <th>المشرف الأكاديمي</th>
+        <th>العلامة</th>
+      </tr>
+      <tr>
+        <td>0/1266</td>
+        <td>تقنية تصميم صفحات الويب</td>
+        <td>3</td>
+        <td>مسجل</td>
+        <td>أ.رائد إبراهيم شتيوي زحالقة </td>
+        <td><span>90</span></td>
+      </tr>
+      <tr>
+        <td>0/1290</td>
+        <td>تصميم منطق الحاسوب </td>
+        <td>3</td>
+        <td>مسجل</td>
+        <td>أ.رائد إبراهيم شتيوي زحالقة</td>
+        <td><span>90</span></td>
+      </tr>
+      <tr>
+        <td>1/1295</td>
+        <td>برمجة 2</td>
+        <td>4</td>
+        <td>مسجل</td>
+        <td>أ.رائد إبراهيم شتيوي زحالقة</td>
+        <td><span>80</span></td>
+      </tr>
+      <tr>
+        <td>1/1296</td>
+        <td>تركيب البيانات وتصميم الخوارزميات</td>
+        <td>4</td>
+        <td>مسجل</td>
+        <td>أ.إبراهيم رضوان محمد رمضان</td>
+        <td><span>77</span></td>
+      </tr>
+       <tr>
+        <td>0/0205</td>
+        <td>فلسطين والقضية الفلسطينية </td>
+        <td>3</td>
+        <td>مسجل</td>
+        <td>أ.علام نبيل فضل طاهر</td>
+        <td><span>80</span></td>
+      </tr>
+
+     
+     
+    </table>
+    <div class="box" style="margin-top: 20px; text-align: right;">
+      <div style="border-bottom: solid 1px wheat;">
+        حساب المعدل
+      </div>
+
+      <div style="margin-top: 30px; margin-bottom: 30px;">
+        <input class="btn" name="Submit" onclick="getAvg();" type="submit" value="احسب المعدل">
+        <p style="margin-right: 10px;">
+          المعدل: <span id="avg">_%</span>
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function getAvg() {
+        var sum = 0, number;
+        var table = document.getElementById("myTable");
+        var spans = table.getElementsByTagName("span");
+        number = spans.length;
+        for (var i = 0; i < spans.length; i++) {
+          sum = sum + parseInt(spans[i].innerHTML);
+        }
+        var avg = sum / number;
+        document.getElementById("avg").innerHTML = avg + "%";
+      }
+    </script>
+</body>
+
+</html>
